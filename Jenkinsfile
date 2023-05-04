@@ -7,7 +7,7 @@ pipeline {
                 steps {
                     script {
                         sh 'rm -rf *.war'
-                        sh 'jar -cvf swe645project3.war /test/swe645project3 .'
+                        sh 'jar -cvf swe645project3.war /test/ .'
                         sh 'echo ${BUILD_TIMESTAMP}'
                         sh "docker login -u ashritmr -p ${env.docker}"
                         sh 'docker build -t ashritmr/swe645assignment3:${BUILD_TIMESTAMP} .'
